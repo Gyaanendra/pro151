@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="./rotation.js"></script>
+</head>
+
+<body>
+  <a-scene >
+    <a-sky src="./istockphoto-1281323504-170667a.jpg" rotation="0 -90 0"></a-sky>
+    <a-camera wasd-controls-enabled="false" position="0 8 20"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <!--Add Code Here-->
+      <a-asset-item id="tableobj" src="./car/tinker.obj"></a-asset-item>
+      <a-asset-item id="tablemtl" src="./car/obj.mtl"></a-asset-item>
+
+
+    </a-assets>
+    
+    
+    <!--------------------------------------OBJ Models----------------------------------------------------------->   
+  
+    <!--Add code here-->
+    <a-entity rotation="0 0 0" rotation2>
+      <a-entity obj-model="obj:#tableobj;mtl:#tablemtl" position="-1.5 2 -6" rotation="-90 25 0" scale="0.1 0.1 0.1"></a-entity>
+    </a-entity>
+
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+    <a-entity rotation="0 0 0" rotation2>
+      <a-circle id="floor" position="-1.5 2 -6" rotation="-90 0 0" radius="10" shadow="receive: true" visible="true"
+        color="grey">
+      </a-circle>
+    </a-entity>
+    
+  
+    
+
+    </a-entity>
+    
+  </a-scene>
+</body>
+
+</html>
